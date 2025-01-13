@@ -1,0 +1,39 @@
+# ~/.inputrc
+
+$include /etc/inputrc  # Include system-wide inputrc file
+
+# Key Bindings
+# Search forward in history with Ctrl+F (during reverse-i-search)
+"\C-f": forward-search-history
+
+# Uncomment the lines below to enable history search with Ctrl+P/Ctrl+N
+# "\C-p": history-search-backward
+# "\C-n": history-search-forward
+
+# Completion and Display Settings
+# Display completions using colors based on file types (set via LS_COLORS)
+set colored-stats on
+
+# Case-insensitive autocompletion
+set completion-ignore-case on
+
+# Append a slash to symlinked directories during completion
+set mark-symlinked-directories on
+
+# Show extra file information (like `ls -F`) during file completions
+set visible-stats on
+
+# Meta Key and UTF-8 Support
+# Allow UTF-8 input/output (instead of showing $'\0123\0456')
+set input-meta on
+set output-meta on
+
+# Uncomment below to allow 8-bit characters (e.g., umlauts); disables Meta key
+# set convert-meta off
+
+# Miscellaneous Settings
+# Enable bracketed paste mode to prevent automatic command execution on paste
+set enable-bracketed-paste on
+
+# Uncomment the line below to disable asterisks for modified lines in your history
+# set mark-modified-lines off

@@ -1,0 +1,27 @@
+# ~/.bash_settings
+
+# Will correct minor spelling mistakes when changing directory
+shopt -s cdspell
+
+# don't put duplicate lines or lines starting with space in the history.
+# Add a space to your commands to avoid saving them.
+HISTCONTROL=ignoreboth
+
+# Causes bash to append to history instead of overwriting it
+# If you start a new terminal, you have old session history
+shopt -s histappend
+
+# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
+HISTSIZE=1000
+HISTFILESIZE=2000
+
+### Additional shopt commands that may be useful ###
+
+# To change directory with just directory name, no cd
+# shopt -s autocd
+
+# To cause the shell to expand variables, tildes, etc in the command line with tab to complete
+# shopt -s direxpand
+
+# To include files beginning with . when using globs
+# shopt -s dotglob

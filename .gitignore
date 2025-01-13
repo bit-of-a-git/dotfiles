@@ -1,0 +1,15 @@
+# Ignore backup files
+*~
+
+# Ignore temporary files
+*.tmp
+
+# Ignore user-specific files
+.bash_history
+.bash_sessions/
+
+# Ignore environment-specific configurations
+.env
+
+# Ignore VSCode settings
+.vscode/
