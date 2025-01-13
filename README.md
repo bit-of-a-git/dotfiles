@@ -38,9 +38,14 @@ To use these dotfiles, you'll need:
 ### Bash Configuration
 
 - `.bash_aliases` contains useful command aliases, some I found in various repos or articles and a few that I added myself.
-- `.bashrc` sources aliases and global definitions, modifies the behavior of the history, and adds a custom Git prompt using gitstatus.
+- `.bash_exports` sets up colored man pages and PATH configurations, and enforces pip installations in virtual environments.
+- `.bash_functions` provides useful shell functions like `mkd` (mkdir + cd), `targz` (create tar archives), `up` (navigate up directories), `xt` (extract archives), `genpass` (generate passwords), and more.
 - `.bash_profile` ensures `.bashrc` is sourced for login bash shells.
+- `.bash_prompt` is a custom prompt using gitstatus, which displays useful Git information when in a repository.
+- `.bash_settings` configures shell behavior including history settings and spelling correction.
+- `.bashrc` sources other files, global definitions if present, and calls the bash prompt.
 - `.inputrc` includes system-wide inputrc settings, adds useful shortcuts for history searches, colours to file types, ignores case for auto completion, and disables the automatic execution of pasted commands containing new lines - an essential security feature in my opinion.
+- `vimrc` contains my Vim configuration, which is currently a work in progress.
 
 ### Custom Prompt
 
