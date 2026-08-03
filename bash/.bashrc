@@ -31,4 +31,7 @@ if command -v npm >/dev/null 2>&1; then
 fi
 
 # This sets up fzf. I am mainly looking for the ctrl+r command, so disabling the others
-FZF_CTRL_T_COMMAND= FZF_ALT_C_COMMAND= eval "$(fzf --bash)"
+if command -v fzf >/dev/null 2>&1; then
+    FZF_CTRL_T_COMMAND= FZF_ALT_C_COMMAND= eval "$(fzf --bash)"
+fi
+

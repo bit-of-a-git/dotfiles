@@ -24,17 +24,16 @@ set incsearch                  " Incremental search, hit `<CR>` to stop.
 set wildmenu                   " Great command-line completion, use `<Tab>` to move
                                " around and `<CR>` to validate.
 
-
-
 " The below was taken from https://www.freecodecamp.org/news/vimrc-configuration-guide-customize-your-vim-editor/
 
 " Make wildmenu behave like similar to Bash completion.
-" set wildmode=list:longest
+set wildmode=list:longest
 
 " There are certain files that we would never want to edit with Vim.
 " Wildmenu will ignore files with these extensions.
 set wildignore=*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.flv,*.img,*.xlsx
 
+" Formatting
 
 " Set shift width to 4 spaces.
 " set shiftwidth=4
@@ -45,6 +44,8 @@ set wildignore=*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.flv,*.img,*.xlsx
 " Use space characters instead of tabs.
 " set expandtab
 
+" Search
+
 " Ignore capital letters during search.
 " set ignorecase
 
@@ -52,23 +53,28 @@ set wildignore=*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.flv,*.img,*.xlsx
 " This will allow you to search specifically for capital letters.
 " set smartcase
 
-" Show partial command you type in the last line of the screen.
-" set showcmd
-
-" Show the mode you are on the last line.
-" set showmode
-
 " Show matching words during a search.
 " set showmatch
 
 " Use highlighting when doing a search.
 " set hlsearch
 
+" Show partial command you type in the last line of the screen.
+" set showcmd
+
+" Show the mode you are on the last line.
+" set showmode
+
 " Set the commands to save in history default number is 20.
 " set history=1000
 
+" Show line numbers
+set number
+
+" Colours/etc
+
 set background=dark
-colorscheme PaperColor
+silent! colorscheme PaperColor
 
 " STATUS LINE ------------------------------------------------------------ {{{
 
