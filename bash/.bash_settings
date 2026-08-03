@@ -18,7 +18,7 @@ HISTFILESIZE=2000
 ### Additional shopt commands that may be useful ###
 
 # To change directory with just directory name, no cd
-# shopt -s autocd
+shopt -s autocd
 
 # To cause the shell to expand variables, tildes, etc in the command line with tab to complete
 # shopt -s direxpand
