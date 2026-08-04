@@ -1,4 +1,4 @@
-# ~/.bash_functions
+# ~/.shell_functions - Shared functions for both Bash and Zsh
 
 # Creates a new directory and cds to it immediately
 # function mkd() {

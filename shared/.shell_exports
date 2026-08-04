@@ -1,4 +1,4 @@
-# ~/.bash_exports
+# ~/.shell_functions - Shared functions for both Bash and Zsh
 
 # Add color in manpages for less
 export LESS_TERMCAP_mb=$'\E[01;34m'    # Blink (blue)
@@ -22,6 +22,7 @@ fi
 # I think this was related to using GPG for git/SSH
 export GPG_TTY=$(tty)
 
-# if [[ -n "${WSL_DISTRO_NAME}" ]]; then
-#     export BROWSER="/mnt/c/Program Files/Mozilla Firefox/firefox.exe"
-# fi
+# Node Version Manager
+if command -v nvm >/dev/null 2>&1; then
+    export NVM_DIR="$HOME/.nvm"
+fi
