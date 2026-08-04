@@ -10,9 +10,16 @@ elif [ -f /usr/share/bash-completion/bash_completion ]; then
     . /usr/share/bash-completion/bash_completion
 fi
 
-for file in ~/.bash_{aliases,exports,functions,prompt,settings}; do
+# Source shared shell configuration
+for file in ~/.shell_{aliases,exports,functions}; do
     [ -r "$file" ] && [ -f "$file" ] && source "$file"
 done
+
+# Source Bash-specific configuration
+for file in ~/.bash_{prompt,settings}; do
+    [ -r "$file" ] && [ -f "$file" ] && source "$file"
+done
+
 unset file
 
 if [ -f ~/.gitstatus/gitstatus.prompt.sh ]; then
@@ -22,7 +29,6 @@ else
     PROMPT_COMMAND='history -a; history -n;'
 fi
 
-export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"                   # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
 
