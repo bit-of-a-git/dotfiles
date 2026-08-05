@@ -15,3 +15,6 @@ setopt APPEND_HISTORY
 
 # Change directory without typing 'cd'
 setopt AUTO_CD
+
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down

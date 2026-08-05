@@ -26,3 +26,9 @@ unset file
 if command -v fzf >/dev/null 2>&1; then
 	FZF_CTRL_T_COMMAND= FZF_ALT_C_COMMAND= eval "$(fzf --zsh)"
 fi
+
+# Search through history by entering a string and pressing up and down
+source ~/.zsh/zsh-history-substring-search/zsh-history-substring-search.zsh
+
+# Autosuggestions - press the right arrow to accept
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
