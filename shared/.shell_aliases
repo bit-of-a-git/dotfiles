@@ -1,4 +1,4 @@
-# ~/.bash_aliases
+# ~/.shell_aliases - Shared aliases for both Bash and Zsh
 
 # Common variations of 'ls' command.
 alias ls='ls --color=always' # add colors and file type extensions

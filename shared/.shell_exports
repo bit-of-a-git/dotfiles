@@ -1,4 +1,4 @@
-# ~/.bash_exports
+# ~/.shell_functions - Shared functions for both Bash and Zsh
 
 # Add color in manpages for less
 export LESS_TERMCAP_mb=$'\E[01;34m'    # Blink (blue)
@@ -10,18 +10,14 @@ export LESS_TERMCAP_ue=$'\E[0m'        # Reset
 export LESS_TERMCAP_us=$'\E[01;33m'    # Underline (yellow)
 
 # set PATH so it includes user's private bin if it exists
-if [ -d "$HOME/bin" ]; then
-    export PATH="$HOME/bin:$PATH"
-fi
-
-# set PATH so it includes user's private bin if it exists
 if [ -d "$HOME/.local/bin" ]; then
-    export PATH="$HOME/.local/bin:$PATH"
+	export PATH="$HOME/.local/bin:$PATH"
 fi
 
 # I think this was related to using GPG for git/SSH
 export GPG_TTY=$(tty)
 
-# if [[ -n "${WSL_DISTRO_NAME}" ]]; then
-#     export BROWSER="/mnt/c/Program Files/Mozilla Firefox/firefox.exe"
-# fi
+# Node Version Manager
+if command -v nvm >/dev/null 2>&1; then
+	export NVM_DIR="$HOME/.nvm"
+fi
