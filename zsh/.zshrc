@@ -16,13 +16,13 @@ for file in ~/.shell_{aliases,exports,functions,sources}; do
 done
 
 # Source Zsh-specific configuration
-for file in ~/.{settings,completions}.zsh; do
+for file in ~/.{antigen,completions,settings}.zsh; do
 	[ -r "$file" ] && [ -f "$file" ] && source "$file"
 done
 
 unset file
 
-# This sets up fzf. We're mainly looking for the ctrl+r command, so disabling the others
+# This sets up fzf. Mainly looking for the ctrl+r command, so disabling the others
 if command -v fzf >/dev/null 2>&1; then
 	FZF_CTRL_T_COMMAND= FZF_ALT_C_COMMAND= eval "$(fzf --zsh)"
 fi

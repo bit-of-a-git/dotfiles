@@ -15,3 +15,7 @@ setopt APPEND_HISTORY
 
 # Change directory without typing 'cd'
 setopt AUTO_CD
+
+# Used with the zsh-history-substring-search plugin
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
