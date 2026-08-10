@@ -19,3 +19,7 @@ setopt AUTO_CD
 # Used with the zsh-history-substring-search plugin
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
+
+# Move through words like Bash (i.e. stop at forward slashes, full stops)
+autoload -U select-word-style
+select-word-style bash
