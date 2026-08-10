@@ -6,3 +6,10 @@
 if command -v npm >/dev/null 2>&1; then
 	source <(npm completion)
 fi
+
+if command -v brew >/dev/null 2>&1; then
+	HOMEBREW_COMMAND_NOT_FOUND_HANDLER="$(brew --repository)/Library/Homebrew/command-not-found/handler.sh"
+	if [ -f "$HOMEBREW_COMMAND_NOT_FOUND_HANDLER" ]; then
+		source "$HOMEBREW_COMMAND_NOT_FOUND_HANDLER";
+	fi
+fi

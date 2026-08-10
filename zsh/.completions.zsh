@@ -1,5 +1,9 @@
 # ~/.completions.zsh
 
+if command -v docker >/dev/null 2>&1; then
+	FPATH="${HOME}/.docker/completions:${FPATH}"
+fi
+
 # Initialize Zsh completion system
 autoload -Uz compinit
 compinit
@@ -14,7 +18,7 @@ zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 zstyle ':completion:*' menu select
 
 # Use menu completion for completions, automatically show menu after first tab
-setopt AUTO_MENU MENU_COMPLETE
+setopt AUTO_MENU
 
 # Group completion results
 zstyle ':completion:*' format '%d'
