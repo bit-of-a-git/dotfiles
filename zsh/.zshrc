@@ -18,7 +18,7 @@ for file in ~/.shell_{aliases,exports,functions,sources}; do
 done
 
 # Source Zsh-specific configuration
-for file in ~/.{antigen,completions,settings}.zsh; do
+for file in ~/.{antigen-config,completions,settings}.zsh; do
 	[ -r "$file" ] && [ -f "$file" ] && source "$file"
 done
 
