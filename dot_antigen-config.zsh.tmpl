@@ -1,6 +1,10 @@
 # ~/.antigen.zsh
 
-source ~/.antigen/antigen.zsh
+{{ if eq .chezmoi.osRelease.name "Aurora" }}
+source /home/linuxbrew/.linuxbrew/share/antigen/antigen.zsh
+{{ else }}
+source /opt/homebrew/share/antigen/antigen.zsh
+{{ end }}
 
 antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle zsh-users/zsh-history-substring-search
