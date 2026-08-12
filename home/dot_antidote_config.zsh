@@ -1,8 +1,6 @@
-# ~/.antigen.zsh
+# ~/.antidote-config.zsh
 
-source "${HOMEBREW_PREFIX}/share/antigen/antigen.zsh"
+source $(brew --prefix)/opt/antidote/share/antidote/antidote.zsh
 
-antigen bundle zsh-users/zsh-autosuggestions
-antigen bundle zsh-users/zsh-history-substring-search
-
-antigen apply
+# initialize plugins statically with ${ZDOTDIR:-$HOME}/.zsh_plugins.txt
+antidote load
