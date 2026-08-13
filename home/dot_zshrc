@@ -18,7 +18,7 @@ for file in "${HOME}"/.shared_shell/*; do
 done
 
 # Source Zsh-specific configuration
-for file in "${HOME}/."{antigen-config,completions,settings}.zsh; do
+for file in "${HOME}"/.zsh/*; do
 	[ -r "${file}" ] && [ -f "${file}" ] && source "${file}"
 done
 
