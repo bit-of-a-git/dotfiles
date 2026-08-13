@@ -16,7 +16,7 @@ for file in "${HOME}"/.shared_shell/*; do
 done
 
 # Source Bash-specific configuration
-for file in ${HOME}/.bash_{prompt,settings}; do
+for file in "${HOME}"/.bash/*; do
 	[ -r "$file" ] && [ -f "$file" ] && source "$file"
 done
 
