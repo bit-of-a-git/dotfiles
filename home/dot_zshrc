@@ -23,8 +23,3 @@ for file in "${HOME}"/.zsh/*; do
 done
 
 unset file
-
-# This sets up fzf. Mainly looking for the ctrl+r command, so disabling the others
-if command -v fzf >/dev/null 2>&1; then
-	FZF_CTRL_T_COMMAND="" FZF_ALT_C_COMMAND="" eval "$(fzf --zsh)"
-fi

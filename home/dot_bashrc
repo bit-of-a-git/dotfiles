@@ -28,8 +28,3 @@ if [ -f "${HOME}/.gitstatus/gitstatus.prompt.sh" ]; then
 else
 	PROMPT_COMMAND='history -a; history -n;'
 fi
-
-# This sets up fzf. Mainly looking for the ctrl+r command, so disabling the others
-if command -v fzf >/dev/null 2>&1; then
-	FZF_CTRL_T_COMMAND="" FZF_ALT_C_COMMAND="" eval "$(fzf --bash)"
-fi
