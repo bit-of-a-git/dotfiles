@@ -23,3 +23,6 @@ bindkey '^[[B' history-substring-search-down
 # Move through words like Bash (i.e. stop at forward slashes, full stops)
 autoload -U select-word-style
 select-word-style bash
+
+# Zsh does not allow comment characters in interactive shells by default. This re-enables them
+setopt interactivecomments

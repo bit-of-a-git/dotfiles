@@ -57,7 +57,7 @@ set wildignore=*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.flv,*.img,*.xlsx
 " set showmatch
 
 " Use highlighting when doing a search.
-" set hlsearch
+set hlsearch
 
 " Show partial command you type in the last line of the screen.
 " set showcmd
