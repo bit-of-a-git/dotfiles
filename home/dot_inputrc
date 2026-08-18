@@ -26,3 +26,8 @@ set enable-bracketed-paste on
 
 # Uncomment the line below to disable asterisks for modified lines in your history
 # set mark-modified-lines off
+
+# Allows moving between words with ctrl+left,ctrl+right
+# Find key sequences by entering read and replacing ^[ with \e
+"\e[1;5C": forward-word
+"\e[1;5D": backward-word
