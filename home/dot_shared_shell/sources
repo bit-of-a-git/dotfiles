@@ -13,13 +13,3 @@ if command -v brew >/dev/null 2>&1; then
 		source "$HOMEBREW_COMMAND_NOT_FOUND_HANDLER";
 	fi
 fi
-
-if command -v fzf >/dev/null 2>&1; then
-	# ctrl+t for files and directories, alt+c for directories
-	# ctrl+r for history, ** in various commands for fuzzy search
-	if [ -n "$BASH_VERSION" ]; then
-		eval "$(fzf --bash)"
-	elif [ -n "$ZSH_VERSION" ]; then
-		eval "$(fzf --zsh)"
-	fi
-fi

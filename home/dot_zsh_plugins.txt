@@ -1,3 +1,4 @@
 ohmyzsh/ohmyzsh path:plugins/dotenv
+ohmyzsh/ohmyzsh path:plugins/fzf
 zsh-users/zsh-autosuggestions
 zsh-users/zsh-history-substring-search
