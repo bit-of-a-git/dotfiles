@@ -1,8 +1,5 @@
 # ~/.settings.zsh
 
-# Emacs mode (e.g. ctrl+a to start of line, ctrl+e to end of line)
-bindkey -e
-
 # History
 HISTSIZE=10000
 SAVEHIST=10000

@@ -13,12 +13,12 @@ fi
 [[ ! -f "${HOME}/.p10k.zsh" ]] || source "${HOME}/.p10k.zsh"
 
 # Source shared shell configuration
-for file in "${HOME}"/.shared_shell/*; do
+for file in "${HOME}"/.config/shared_shell/*; do
 	[ -r "$file" ] && [ -f "$file" ] && source "$file"
 done
 
 # Source Zsh-specific configuration
-for file in "${HOME}"/.zsh/*; do
+for file in "${HOME}"/.config/zsh/*; do
 	[ -r "${file}" ] && [ -f "${file}" ] && source "${file}"
 done
 

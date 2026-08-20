@@ -11,12 +11,12 @@ elif [ -f /usr/share/bash-completion/bash_completion ]; then
 fi
 
 # Source shared shell configuration
-for file in "${HOME}"/.shared_shell/*; do
+for file in "${HOME}"/.config/shared_shell/*; do
 	[ -r "$file" ] && [ -f "$file" ] && source "$file"
 done
 
 # Source Bash-specific configuration
-for file in "${HOME}"/.bash/*; do
+for file in "${HOME}"/.config/bash/*; do
 	[ -r "$file" ] && [ -f "$file" ] && source "$file"
 done
 
