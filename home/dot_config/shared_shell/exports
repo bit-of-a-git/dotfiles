@@ -17,3 +17,7 @@ unset VIM_PATH
 if command -v nvm >/dev/null 2>&1; then
 	export NVM_DIR="$HOME/.nvm"
 fi
+
+if command -v vivid >/dev/null 2>&1; then
+	export LS_COLORS="$(vivid generate molokai)"
+fi
