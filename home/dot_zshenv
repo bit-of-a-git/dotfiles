@@ -1,2 +1,4 @@
+# ~/.zshenv
+
 # Used for several oh-my-zsh plugins
 ZSH_CACHE_DIR="${XDG_CACHE_HOME:-$HOME/.cache}/zsh"

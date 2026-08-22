@@ -1,8 +1,4 @@
-# ~/.completions.zsh
-
-if command -v docker >/dev/null 2>&1; then
-	FPATH="${HOME}/.docker/completions:${FPATH}"
-fi
+# ~/.completions.zsh - sets how tab completion works
 
 # Initialize Zsh completion system
 autoload -Uz compinit

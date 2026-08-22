@@ -1,4 +1,4 @@
-# ~/.bash_prompt
+# ~/.config/bash/prompt - Git status prompt
 
 # Colours used in the prompt
 # PROMPT_BLACK='\[\033[0;30m\]'

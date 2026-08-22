@@ -1,4 +1,4 @@
-# ~/.shell_aliases - Shared aliases for both Bash and Zsh
+# ~/.config/shared_shell/aliases
 
 # Aliases to modified commands. Append \ before a command to use it unaltered
 alias grep="grep --color=auto"      # colours grep matches

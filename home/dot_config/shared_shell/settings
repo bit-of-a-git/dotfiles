@@ -1,13 +1,12 @@
-# "${HOME}"/.shared_shell/settings
-# Shared settings for Bash and Zsh
+# ~/.config/shared_shell/settings - shared settings for Bash and Zsh
 
-if [ -n "$BASH_VERSION" ]; then
+if [ -n "${BASH_VERSION}" ]; then
 	# Allows moving between words with ctrl+left,ctrl+right
 	# Find key sequences by entering read and replacing ^[ with \e
 	bind '"\e[1;5C": forward-word'
 	bind '"\e[1;5D": backward-word'
 
-elif [ -n "$ZSH_VERSION" ]; then
+elif [ -n "${ZSH_VERSION}" ]; then
 	# Emacs mode (e.g. ctrl+a to start of line, ctrl+e to end of line)
 	# Has to be set before the forward/backward-word lines
 	bindkey -e

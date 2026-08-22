@@ -1,4 +1,4 @@
-# ~/.bash_settings
+# ~/.config/bash/settings
 
 # Will correct minor spelling mistakes when changing directory
 shopt -s cdspell

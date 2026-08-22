@@ -1,23 +1,24 @@
-# ~/.shell_functions - Shared functions for both Bash and Zsh
+# ~/.config/shared_shell/exports - environment variables
 
 # set PATH so it includes user's private bin if it exists
-if [ -d "$HOME/.local/bin" ]; then
-	export PATH="$HOME/.local/bin:$PATH"
+if [ -d "${HOME}/.local/bin" ]; then
+	export PATH="${HOME}/.local/bin:${PATH}"
 fi
 
 VIM_PATH="/usr/bin/vim"
-if command -v "${VIM_PATH}" >/dev/null 2>&1; then
-    export EDITOR="${VIM_PATH}"
-    export VISUAL="${VIM_PATH}"
-    export SYSTEMD_EDITOR="${VIM_PATH}"
+if command -v ${VIM_PATH} >/dev/null 2>&1; then
+    export EDITOR=${VIM_PATH}
+    export VISUAL=${VIM_PATH}
+    export SYSTEMD_EDITOR=${VIM_PATH}
 fi
 unset VIM_PATH
 
 # Node Version Manager
 if command -v nvm >/dev/null 2>&1; then
-	export NVM_DIR="$HOME/.nvm"
+	export NVM_DIR="${HOME}/.nvm"
 fi
 
 if command -v vivid >/dev/null 2>&1; then
-	export LS_COLORS="$(vivid generate molokai)"
+	LS_COLORS="$(vivid generate molokai)"
+	export LS_COLORS
 fi
