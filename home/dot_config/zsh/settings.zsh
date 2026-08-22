@@ -5,10 +5,14 @@ HISTSIZE=10000
 SAVEHIST=10000
 HISTFILE="${HOME}/.zsh_history"
 
-setopt HIST_IGNORE_ALL_DUPS
 setopt HIST_IGNORE_SPACE
+setopt HIST_IGNORE_ALL_DUPS
 setopt HIST_FIND_NO_DUPS
+setopt SHARE_HISTORY
 setopt APPEND_HISTORY
+
+# don't store history/fc commands
+setopt HIST_NO_STORE
 
 # Change directory without typing 'cd'
 setopt AUTO_CD

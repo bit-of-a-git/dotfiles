@@ -1,47 +1,52 @@
 # ~/.config/bash/prompt - Git status prompt
 
-# Colours used in the prompt
-# PROMPT_BLACK='\[\033[0;30m\]'
-# PROMPT_RED='\[\033[0;31m\]'
-# PROMPT_GREEN='\[\033[0;32m\]'
-# PROMPT_YELLOW='\[\033[0;33m\]'
-# PROMPT_BLUE='\[\033[0;34m\]'
-# PROMPT_MAGENTA='\[\033[0;35m\]'
-# PROMPT_CYAN='\[\033[0;36m\]'
-# PROMPT_WHITE='\[\033[0;37m\]'
+_setup_prompt_colors() {
+local PROMPT_BLACK='\[\033[0;30m\]'
+local PROMPT_RED='\[\033[0;31m\]'
+local PROMPT_GREEN='\[\033[0;32m\]'
+local PROMPT_YELLOW='\[\033[0;33m\]'
 
-# PROMPT_BRIGHT_BLACK='\[\033[01;30m\]'
-PROMPT_BRIGHT_RED='\[\033[01;31m\]'
-PROMPT_BRIGHT_GREEN='\[\033[01;32m\]'
-# PROMPT_BRIGHT_YELLOW='\[\033[01;33m\]'
-PROMPT_BRIGHT_BLUE='\[\033[01;34m\]'
-# PROMPT_BRIGHT_MAGENTA='\[\033[01;35m\]'
-PROMPT_BRIGHT_CYAN='\[\033[01;36m\]'
-# PROMPT_BRIGHT_WHITE='\[\033[01;37m\]'
+local PROMPT_BLUE='\[\033[0;34m\]'
+local PROMPT_MAGENTA='\[\033[0;35m\]'
+local PROMPT_CYAN='\[\033[0;36m\]'
+local PROMPT_WHITE='\[\033[0;37m\]'
 
-PROMPT_COLOUR_ONE=${PROMPT_BRIGHT_GREEN}
-PROMPT_COLOUR_TWO=${PROMPT_BRIGHT_BLUE}
-PROMPT_COLOUR_THREE=${PROMPT_BRIGHT_CYAN}
-PROMPT_ERROR=${PROMPT_BRIGHT_RED}
-PROMPT_CLEAR='\[\033[00m\]'
+local PROMPT_BRIGHT_BLACK='\[\033[01;30m\]'
+local PROMPT_BRIGHT_RED='\[\033[01;31m\]'
+local PROMPT_BRIGHT_GREEN='\[\033[01;32m\]'
+local PROMPT_BRIGHT_YELLOW='\[\033[01;33m\]'
+
+local PROMPT_BRIGHT_BLUE='\[\033[01;34m\]'
+local PROMPT_BRIGHT_MAGENTA='\[\033[01;35m\]'
+local PROMPT_BRIGHT_CYAN='\[\033[01;36m\]'
+local PROMPT_BRIGHT_WHITE='\[\033[01;37m\]'
+
+_PROMPT_COLOUR_ONE=${PROMPT_BRIGHT_GREEN}
+_PROMPT_COLOUR_TWO=${PROMPT_BRIGHT_BLUE}
+_PROMPT_COLOUR_THREE=${PROMPT_BRIGHT_CYAN}
+_PROMPT_ERROR=${PROMPT_BRIGHT_RED}
+_PROMPT_CLEAR='\[\033[00m\]'
+}
 
 function my_prompt() {
 	# Gets the first argument passed in to my_prompt
 	local EXIT=$1
 
+	_setup_prompt_colors
+
 	# Checks if a virtual environment is active, and if so, includes it in the prompt
 	local venv_prompt=""
 	if [[ -n "${VIRTUAL_ENV}" ]]; then
-		venv_prompt="("$(basename "${VIRTUAL_ENV}")")\n"
+		venv_prompt="($(basename "${VIRTUAL_ENV}"))\n"
 	fi
 
 	# Sets the prompt to include the username, hostname, and current working directory
-	local main_prompt="${PROMPT_COLOUR_ONE}\u@\h ${PROMPT_COLOUR_TWO}\w "
+	local main_prompt="${_PROMPT_COLOUR_ONE}\u@\h ${_PROMPT_COLOUR_TWO}\w "
 
 	# If in a git repository, includes the current branch and status
 	local git_prompt=""
 	if gitstatus_query && [[ "${VCS_STATUS_RESULT}" == ok-sync ]]; then
-		git_prompt+="${PROMPT_COLOUR_THREE}["
+		git_prompt+="${_PROMPT_COLOUR_THREE}["
 		if [[ -n "${VCS_STATUS_LOCAL_BRANCH}" ]]; then
 			git_prompt+="${VCS_STATUS_LOCAL_BRANCH//\\/\\\\}" # escape backslash
 		else
@@ -73,19 +78,19 @@ function my_prompt() {
 		((VCS_STATUS_NUM_CONFLICTED)) && git_prompt+=" ~${VCS_STATUS_NUM_CONFLICTED}"
 
 		if [[ "${VCS_STATUS_HAS_STAGED}" -eq 1 || "${VCS_STATUS_HAS_UNSTAGED}" -eq 1 ]]; then
-			git_prompt+="${PROMPT_ERROR} x"
+			git_prompt+="${_PROMPT_ERROR} x"
 		else
 			git_prompt+=" ✓"
 		fi
 
-		git_prompt+="${PROMPT_COLOUR_THREE}]"
+		git_prompt+="${_PROMPT_COLOUR_THREE}]"
 	fi
 
 	local exit_prompt=""
 	if [[ $EXIT -eq 0 ]]; then
-		exit_prompt+="\n${PROMPT_CLEAR}\$ "
+		exit_prompt+="\n${_PROMPT_CLEAR}\$ "
 	else
-		exit_prompt+="\n${PROMPT_ERROR}\$${PROMPT_CLEAR} "
+		exit_prompt+="\n${_PROMPT_ERROR}\$${_PROMPT_CLEAR} "
 	fi
 
 	PS1="${venv_prompt}${main_prompt}${git_prompt}${exit_prompt}"
