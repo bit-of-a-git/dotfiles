@@ -11,5 +11,8 @@ source <(carapace _carapace)
 # Better colors for file listings in completion
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 
+zstyle ':completion:*' list-prompt ''
+
 # Menu selection with arrow keys and visual highlighting
-zstyle ':completion:*' menu select
+zstyle ':completion:*' menu search
+zstyle ':completion:*' select-prompt ' %SScrolling active: current selection at %p%s'
