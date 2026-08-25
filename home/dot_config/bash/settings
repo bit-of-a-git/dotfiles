@@ -1,4 +1,4 @@
-# ~/.bash_settings
+# ~/.config/bash/settings
 
 # Will correct minor spelling mistakes when changing directory
 shopt -s cdspell
@@ -20,8 +20,9 @@ HISTFILESIZE=10000
 # To change directory with just directory name, no cd
 shopt -s autocd
 
-# To cause the shell to expand variables, tildes, etc in the command line with tab to complete
-# shopt -s direxpand
-
 # To include files beginning with . when using globs
 # shopt -s dotglob
+
+# check the window size after each command and, if necessary,
+# update the values of LINES and COLUMNS.
+shopt -s checkwinsize

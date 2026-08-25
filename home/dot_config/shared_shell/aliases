@@ -1,0 +1,7 @@
+# ~/.config/shared_shell/aliases
+
+# Aliases to modified commands. Append \ before a command to use it unaltered
+alias grep="grep --color=auto"      # colours grep matches
+alias k='kubectl'
+alias sts='aws sts get-caller-identity'
+# alias wget='wget -c'                # resumes getting partially downloaded files

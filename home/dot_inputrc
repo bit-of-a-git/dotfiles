@@ -3,8 +3,13 @@
 $include /etc/inputrc  # Include system-wide inputrc file
 
 # Completion and Display Settings
+set show-all-if-ambiguous on
+set menu-complete-display-prefix on
+TAB: menu-complete
+
 # Display completions using colors based on file types (set via LS_COLORS)
-set colored-stats on
+# set colored-completion-prefix on
+# set colored-stats on
 
 # Case-insensitive autocompletion
 set completion-ignore-case on

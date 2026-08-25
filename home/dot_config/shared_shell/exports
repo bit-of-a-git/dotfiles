@@ -1,0 +1,23 @@
+# ~/.config/shared_shell/exports - environment variables
+
+# set PATH so it includes user's private bin if it exists
+if [ -d "${HOME}/.local/bin" ]; then
+	export PATH="${HOME}/.local/bin:${PATH}"
+fi
+
+if command -v vim >/dev/null 2>&1; then
+    export EDITOR="vim"
+    export VISUAL=${EDITOR}
+    export SYSTEMD_EDITOR=${EDITOR}
+fi
+unset VIM_PATH
+
+# Node Version Manager
+if command -v nvm >/dev/null 2>&1; then
+	export NVM_DIR="${HOME}/.nvm"
+fi
+
+if command -v vivid >/dev/null 2>&1; then
+	LS_COLORS="$(vivid generate molokai)"
+	export LS_COLORS
+fi
