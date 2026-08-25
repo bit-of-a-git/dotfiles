@@ -5,6 +5,11 @@ if [ -n "${BASH_VERSION}" ]; then
 	# Find key sequences by entering read and replacing ^[ with \e
 	bind '"\e[1;5C": forward-word'
 	bind '"\e[1;5D": backward-word'
+	
+	# Copies Zsh behaviour of completing commands with up and down arrows
+	# E.g. entering cd and pressing the arrows shows your last commands beginning with cd
+	bind '"\e[A": history-search-backward'
+	bind '"\e[B": history-search-forward'
 
 elif [ -n "${ZSH_VERSION}" ]; then
 	# Emacs mode (e.g. ctrl+a to start of line, ctrl+e to end of line)

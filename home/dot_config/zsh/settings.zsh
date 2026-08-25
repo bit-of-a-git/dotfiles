@@ -6,8 +6,13 @@ SAVEHIST=10000
 HISTFILE="${HOME}/.zsh_history"
 
 setopt HIST_IGNORE_SPACE
+
+setopt HIST_IGNORE_DUPS
 setopt HIST_IGNORE_ALL_DUPS
 setopt HIST_FIND_NO_DUPS
+setopt HIST_SAVE_NO_DUPS
+setopt HIST_EXPIRE_DUPS_FIRST
+
 setopt SHARE_HISTORY
 setopt APPEND_HISTORY
 
@@ -17,7 +22,7 @@ setopt HIST_NO_STORE
 # Change directory without typing 'cd'
 setopt AUTO_CD
 
-# Used with the zsh-history-substring-search plugin
+# Up and down arrows. Used with the zsh-history-substring-search plugin
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
 

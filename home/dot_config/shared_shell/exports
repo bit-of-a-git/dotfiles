@@ -5,11 +5,10 @@ if [ -d "${HOME}/.local/bin" ]; then
 	export PATH="${HOME}/.local/bin:${PATH}"
 fi
 
-VIM_PATH="/usr/bin/vim"
-if command -v ${VIM_PATH} >/dev/null 2>&1; then
-    export EDITOR=${VIM_PATH}
-    export VISUAL=${VIM_PATH}
-    export SYSTEMD_EDITOR=${VIM_PATH}
+if command -v vim >/dev/null 2>&1; then
+    export EDITOR="vim"
+    export VISUAL=${EDITOR}
+    export SYSTEMD_EDITOR=${EDITOR}
 fi
 unset VIM_PATH
 
