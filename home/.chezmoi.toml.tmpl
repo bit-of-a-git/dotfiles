@@ -1,6 +1,6 @@
 {{ $email := promptStringOnce . "email" "What email address would you like to use on this machine?" -}}
 
-data:
+[data]:
     email: {{ $email | toYaml }}
 
 [edit]
