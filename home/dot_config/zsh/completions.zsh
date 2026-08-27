@@ -14,5 +14,5 @@ zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 zstyle ':completion:*' list-prompt ''
 
 # Menu selection with arrow keys and visual highlighting
-zstyle ':completion:*' menu search
+zstyle ':completion:*' menu select
 zstyle ':completion:*' select-prompt ' %SScrolling active: current selection at %p%s'
