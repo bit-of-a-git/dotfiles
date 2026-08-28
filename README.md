@@ -42,13 +42,6 @@ This repo is a work in progress as I migrate from stow to chezmoi, experiment wi
     - The `zsh` folder contains my `antidote` and completion setup, in addition to `zsh`-specific settings
 - `home/dot_vim/` contains my Vim configuration.
 
-### Custom Prompt
-
-The custom prompt includes:
-- User and host information.
-- Current working directory.
-- Git repository status with information about branches, commits ahead and behind, untracked/unstaged files, and more.
-
 ---
 
 **Note:** Running chezmoi commands may potentially overwrite existing dotfiles in your home directory. Proceed with caution or back up your existing configurations before running the command.
