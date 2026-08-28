@@ -1,23 +1,31 @@
-# ~/.config/shared_shell/exports - environment variables
+# --- Exports ---
+{{- if stat (joinPath .chezmoi.homeDir ".local/bin") }}
 
-# set PATH so it includes user's private bin if it exists
-if [ -d "${HOME}/.local/bin" ]; then
-	export PATH="${HOME}/.local/bin:${PATH}"
-fi
+# set PATH so it includes user's private bin, if it exists
+export PATH="${HOME}/.local/bin:${PATH}"
 
-if command -v vim >/dev/null 2>&1; then
-    export EDITOR="vim"
-    export VISUAL=${EDITOR}
-    export SYSTEMD_EDITOR=${EDITOR}
-fi
-unset VIM_PATH
+{{- end -}}
+
+{{- if lookPath "vim" }}
+
+# Set vim as the default editor
+export EDITOR="vim"
+export VISUAL=${EDITOR}
+export SYSTEMD_EDITOR=${EDITOR}
+
+{{- end -}}
+
+{{- if lookPath "nvm" }}
 
 # Node Version Manager
-if command -v nvm >/dev/null 2>&1; then
-	export NVM_DIR="${HOME}/.nvm"
-fi
+export NVM_DIR="${HOME}/.nvm"
 
-if command -v vivid >/dev/null 2>&1; then
-	LS_COLORS="$(vivid generate molokai)"
-	export LS_COLORS
-fi
+{{- end -}}
+
+{{- if lookPath "vivid" }}
+
+# Also used for carapace completion
+LS_COLORS="$(vivid generate molokai)"
+export LS_COLORS
+
+{{- end }}
