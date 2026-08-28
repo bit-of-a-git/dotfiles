@@ -1,7 +1,8 @@
-# ~/.config/shared_shell/aliases
+# --- Aliases ---
+# Add a backslash before a command to use it unaltered
 
-# Aliases to modified commands. Append \ before a command to use it unaltered
-alias grep="grep --color=auto"      # colours grep matches
+alias grep="grep --color=auto"
+{{- if lookPath "kubectl" }}
 alias k='kubectl'
+{{- end }}
 alias sts='aws sts get-caller-identity'
-# alias wget='wget -c'                # resumes getting partially downloaded files
