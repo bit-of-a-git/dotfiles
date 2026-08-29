@@ -1,4 +1,4 @@
-# --- Functions ---
+# --- Functions --- #
 
 # Tars up provided files into an archive named after the folder you are in.
 function targz() {
