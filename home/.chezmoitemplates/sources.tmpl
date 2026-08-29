@@ -1,15 +1,31 @@
-# ~/.config/shared_shell/sources - sourcing scripts for Bash and Zsh
+# --- Sources ---
+# TODO - check whether all this stuff is needed for zsh - maybe can do it with plugin
+{{- if stat (joinPath .chezmoi.homeDir ".nvm") }}
 
-[ -s "${NVM_DIR}/nvm.sh" ] && \. "${NVM_DIR}/nvm.sh"                   # This loads nvm
-[ -s "${NVM_DIR}/bash_completion" ] && \. "${NVM_DIR}/bash_completion" # This loads nvm bash_completion
+# Node Version Manager
+export NVM_DIR="${HOME}/.nvm"
 
-if command -v npm >/dev/null 2>&1; then
-	source <(npm completion)
+{{- if stat (joinPath .chezmoi.homeDir ".nvm/nvm.sh") }}
+
+# This loads nvm
+\. "${NVM_DIR}/nvm.sh"
+
+{{- if (and (base .chezmoi.targetFile | eq ".bashrc") (stat (joinPath .chezmoi.homeDir ".nvm/bash_completion")) ) }}
+
+# This loads nvm bash_completion
+\. "${NVM_DIR}/bash_completion"
+
+{{- end }}
+{{- end }}
+{{- end }}
+
+{{- if lookPath "npm" }}
+source <(npm completion)
+{{- end -}}
+
+{{- if lookPath "brew" }}
+HOMEBREW_COMMAND_NOT_FOUND_HANDLER="$(brew --repository)/Library/Homebrew/command-not-found/handler.sh"
+if [ -f "${HOMEBREW_COMMAND_NOT_FOUND_HANDLER}" ]; then
+  source "${HOMEBREW_COMMAND_NOT_FOUND_HANDLER}"
 fi
-
-if command -v brew >/dev/null 2>&1; then
-	HOMEBREW_COMMAND_NOT_FOUND_HANDLER="$(brew --repository)/Library/Homebrew/command-not-found/handler.sh"
-	if [ -f "${HOMEBREW_COMMAND_NOT_FOUND_HANDLER}" ]; then
-		source "${HOMEBREW_COMMAND_NOT_FOUND_HANDLER}";
-	fi
-fi
+{{- end -}}

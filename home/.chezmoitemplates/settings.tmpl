@@ -6,7 +6,8 @@
 # Emacs mode (e.g. ctrl+a to start of line, ctrl+e to end of line)
 # Has to be set before the forward/backward-word lines
 bindkey -e
-bindkey "\e[1;5C" forward-word # Find key sequences by entering read and replacing ^[ with \e
+# Find key sequences by entering read and replacing ^[ with \e
+bindkey "\e[1;5C" forward-word
 bindkey "\e[1;5D" backward-word
 
 {{- else if base .chezmoi.targetFile | eq ".bashrc" }}

@@ -1,7 +1,7 @@
 # --- Exports ---
 {{- if stat (joinPath .chezmoi.homeDir ".local/bin") }}
 
-# set PATH so it includes user's private bin, if it exists
+# set PATH so it includes user's private bin
 export PATH="${HOME}/.local/bin:${PATH}"
 
 {{- end -}}
@@ -12,13 +12,6 @@ export PATH="${HOME}/.local/bin:${PATH}"
 export EDITOR="vim"
 export VISUAL=${EDITOR}
 export SYSTEMD_EDITOR=${EDITOR}
-
-{{- end -}}
-
-{{- if lookPath "nvm" }}
-
-# Node Version Manager
-export NVM_DIR="${HOME}/.nvm"
 
 {{- end -}}
 
