@@ -1,0 +1,6 @@
+# --- Aliases --- #
+# Add a backslash before a command to use it unaltered
+
+alias grep="grep --color=auto"
+alias k='kubectl'
+alias sts='aws sts get-caller-identity'

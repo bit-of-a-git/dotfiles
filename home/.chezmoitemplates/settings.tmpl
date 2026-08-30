@@ -1,0 +1,18 @@
+# --- Settings --- #
+{{- if base .chezmoi.targetFile | eq ".zshrc" }}
+
+# Emacs mode (e.g. ctrl+a to start of line, ctrl+e to end of line)
+# Has to be set before the forward/backward-word lines
+bindkey -e
+# Find key sequences by entering read and replacing ^[ with \e
+bindkey "\e[1;5C" forward-word
+bindkey "\e[1;5D" backward-word
+
+{{- else if base .chezmoi.targetFile | eq ".bashrc" }}
+
+# Copies Zsh behaviour of completing commands with up and down arrows
+# E.g. entering cd and pressing the arrows shows your last commands beginning with cd
+bind '"\e[A": history-search-backward'
+bind '"\e[B": history-search-forward'
+
+{{- end }}

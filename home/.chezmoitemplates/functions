@@ -1,0 +1,29 @@
+# --- Functions --- #
+
+# Tars up provided files into an archive named after the folder you are in.
+function targz() {
+	tar -zcvf "$(basename "${PWD}").tar.gz" "$@"
+}
+
+# Extract basically anything
+function xt() {
+	if [ -f "${1}" ]; then
+		case "${1}" in
+		*.tar.bz2) tar -xvjf "${1}" --one-top-level && cd "$(basename "${1}" .tar.bz2)" || return 1 ;;
+		*.tar.gz) tar -xvzf "${1}" --one-top-level && cd "$(basename "${1}" .tar.gz)" || return 1 ;;
+		*.tar.xz) tar -Jxvf "${1}" --one-top-level && cd "$(basename "${1}" .tar.xz)" || return 1 ;;
+		*.bz2) bunzip2 "${1}" ;;
+		*.rar) unrar x "${1}" && cd "$(basename "${1}" .rar)" || return 1 ;;
+		*.gz) gunzip "${1}" ;;
+		*.tar) tar xvf "${1}" && cd "$(basename "${1}" .tar)" || return 1 ;;
+		*.tbz2) tar -xvjf "${1}" && cd "$(basename "${1}" .tbz2)" || return 1 ;;
+		*.tgz) tar -xvzf "${1}" && cd "$(basename "${1}" .tgz)" || return 1 ;;
+		*.zip) unzip "${1}" && cd "$(basename "${1}" .zip)" || return 1 ;;
+		*.Z) uncompress "${1}" && cd "$(basename "${1}" .Z)" || return 1 ;;
+		*.7z) 7z x "${1}" && cd "$(basename "${1}" .7z)" || return 1 ;;
+		*) echo "Don't know how to extract ${1}..." ;;
+		esac
+	else
+		echo "${1} is not a valid file!"
+	fi
+}

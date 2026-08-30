@@ -10,17 +10,16 @@ elif [ -f /usr/share/bash-completion/bash_completion ]; then
 	. /usr/share/bash-completion/bash_completion
 fi
 
-# Source shared shell configuration
-for file in "${HOME}"/.config/shared_shell/*; do
-	[ -r "${file}" ] && [ -f "${file}" ] && source "${file}"
-done
+{{ template "aliases" }}
+{{ template "exports.tmpl" . }}
+{{ template "functions" }}
+{{ template "settings.tmpl" . }}
+{{ template "sources.tmpl" . }}
 
 # Source Bash-specific configuration
 for file in "${HOME}"/.config/bash/*; do
 	[ -r "${file}" ] && [ -f "${file}" ] && source "${file}"
 done
-
-unset file
 
 if [ -f "${HOME}/.gitstatus/gitstatus.prompt.sh" ]; then
 	source "${HOME}/.gitstatus/gitstatus.prompt.sh"
