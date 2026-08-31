@@ -1,6 +1,7 @@
 ohmyzsh/ohmyzsh path:plugins/direnv
 ohmyzsh/ohmyzsh path:plugins/fzf
-Aloxaf/fzf-tab
 ohmyzsh/ohmyzsh path:plugins/gitfast
+Aloxaf/fzf-tab
+romkatv/powerlevel10k
 zsh-users/zsh-autosuggestions
 zsh-users/zsh-history-substring-search
