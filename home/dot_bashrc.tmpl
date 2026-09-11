@@ -10,8 +10,8 @@ elif [ -f /usr/share/bash-completion/bash_completion ]; then
 	. /usr/share/bash-completion/bash_completion
 fi
 
-{{ template "aliases" }}
-{{ template "exports.tmpl" . }}
+{{ template "aliases" . }}
+{{ template "exports" }}
 {{ template "functions" }}
 {{ template "settings.tmpl" . }}
 {{ template "sources.tmpl" . }}
