@@ -13,8 +13,8 @@ fi
 {{ template "aliases" . }}
 {{ template "exports" }}
 {{ template "functions" }}
-{{ template "settings.tmpl" . }}
-{{ template "sources.tmpl" . }}
+{{ template "settings" . }}
+{{ template "sources" }}
 
 # Source Bash-specific configuration
 for file in "${HOME}"/.config/bash/*; do
