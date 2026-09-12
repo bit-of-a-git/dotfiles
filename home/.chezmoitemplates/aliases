@@ -3,6 +3,8 @@
 
 alias grep="grep --color=auto"
 alias k='kubectl'
+{{- if eq .chezmoi.os "darwin" }}
+alias ls='ls -G'
+{{- end }}
 alias sts='aws sts get-caller-identity'
-alias z='zoxide'
 alias zz='zi'

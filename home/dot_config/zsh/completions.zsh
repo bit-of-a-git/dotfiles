@@ -1,5 +1,8 @@
 # ~/.completions.zsh - sets how tab completion works
 
+# Adding Brew tab completions
+eval "$(brew shellenv)"
+
 # Initialize Zsh completion system
 autoload -U compinit && compinit
 

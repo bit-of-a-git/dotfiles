@@ -1,0 +1,21 @@
+packages:
+  linux:
+    brews:
+      - "trash-cli"
+  all:
+    brews:
+      - "antidote"
+      - "bat"
+      - "bbrew"
+      - "carapace"
+      - "direnv"
+      - "dysk"
+      - "eza"
+      - "fd"
+      - "lazydocker"
+      - "lazygit"
+      - "ripgrep"
+      - "shfmt"
+      - "tealdeer"
+      - "vivid"
+      - "zoxide"
